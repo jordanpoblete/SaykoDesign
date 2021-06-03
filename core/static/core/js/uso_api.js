@@ -37,7 +37,7 @@ $(document).ready(inicioapi)
     
         var valido = ""
         if (img == null){
-            valido = "<img src='http://www.santiagofoods.cl/Imagenes/nodisponible.png' class='card-img-top' alt='";
+            valido = "<img src= {% static ' core/img/no-hay-imagen.jpg ' %} class='card-img-top' alt='";
         } else {
             valido =  "<img src='https://www.artic.edu/iiif/2/" + img + "/full/400,/0/default.jpg' class='card-img-top' alt='";
         }
