@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+
+body {
+background-color: rgb(93, 193, 185);
+}
+
+.abajo {
+    text-align: center;
+    color: rgb(207, 52, 118);
+    font-size: 15px;
+    text-shadow: 1px 1px black;
+}
+
+.container {
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+
+#titulo{
+    font-size: 40px;
+    text-align: center;
+    color: rgb(207, 52, 118);
+    text-shadow: 2px 2px black;
+    font-family:fantasy;
+    }
+
+#map {
+    height: 500px;
+	width: 100%;
+  }
+
+  
+  
