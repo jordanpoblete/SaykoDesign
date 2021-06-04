@@ -17,53 +17,58 @@
 </head>
 <body>
     
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div>
-                <img src="{% static 'core/img/firma.png' %}" width="50"  alt="Firma sayko">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div>
+        <img src= "{% static 'core/img/firma.png' %}" width="50"  alt="Firma sayko"/>
+    </div>
+    <a class="navbar-brand" href=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'index'%}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ilustraciones'%}">Ilustraciones</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'diseños'%}">Diseños</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'graffitis'%}">Graffitis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'portadas'%}">Portadas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'identidades'%}">Identidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'formulario'%}">Formulario</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">API</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'api1'%}" id="artapi">Art Institute of Chicago API</a>
+              <a class="dropdown-item" href="{% url 'geolocalizacion'%}"id="geoapi">Geolocalización API</a>
             </div>
-            <a class="navbar-brand" href=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="ilustraciones.html">Ilustraciones</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="diseños.html">Diseños</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="graffitis.html">Graffitis</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="portadas.html">Portadas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="Identidades.html">Identidades</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="formulario.html">Formulario</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">API</a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="uso_api.html" id="artapi">Art Institute of Chicago API</a>
-                      <a class="dropdown-item" href="Geolocalizacion.html"id="geoapi">Geolocalización API</a>
-                    </div>
-                  </li>
-                                        
-              </ul>
-              <form class="d-inline">
-                <a class="btn btn-primary" href="login.html" role="button">Iniciar Sesion</a>         
-                <a class="btn btn-primary" href="registrar.html" role="button">Registrarse</a>
-              </form>
-            </div>
-          </nav>
+          </li>
+                 
+      </ul>
+      <form class="d-inline">
+        <a class="btn btn-primary" href="{% url 'login'%}" role="button">Iniciar Sesion</a>  
+        <a class="btn btn-primary" href="{% url 'register'%}" role="button">Registrarse</a>
+        
+
+      </form>
+
+
+    </div>
+    
+  </nav>
     
     
 
