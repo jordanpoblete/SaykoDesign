@@ -50,6 +50,13 @@
             <a class="nav-link" href="{% url 'formulario'%}">Formulario</a>
           </li>
           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuario</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'usuarios'%}" id="usuarios">Ver Usuarios</a>
+              <a class="dropdown-item" href="{% url 'add_usuario'%}"id="add_usuario">Agregar Usuarios</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">API</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{% url 'api1'%}" id="artapi">Art Institute of Chicago API</a>

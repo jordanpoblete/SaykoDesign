@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Usuario
+from .forms import UsuarioForm
 
 # Create your views here.
 def index(request):
@@ -39,3 +41,25 @@ def register(request):
 
 def api1(request):
    return render(request, 'core/uso_api.html')
+
+
+
+# Base de datos
+
+def usuarios(request):
+   usuarios = Usuario.objects.all()
+   datos = {
+      'usuarios': usuarios
+   }
+   return render(request, 'core/usuarios.html', datos)
+
+
+def add_usuario(request):
+    datos = {'form': UsuarioForm()}
+    if request.method == 'POST':
+        formulario = UsuarioForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Guardado Correctamente"
+            
+    return render(request, 'core/add_usuario.html', datos)
