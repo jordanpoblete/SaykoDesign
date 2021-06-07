@@ -100,6 +100,12 @@ background-color: rgb(93, 193, 185);
 #geoapi {
     color: #000;
 }
+#usuarios {
+    color: #000;
+}
+#add_usuario {
+    color: #000;
+}
 
 #fecha {
     padding: 5px;
