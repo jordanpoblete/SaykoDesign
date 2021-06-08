@@ -54,7 +54,7 @@ def peticiones(request):
    return render(request, 'core/peticiones.html', datos)
 
 
-def add_peticion(request):
+def add_peticiones(request):
     datos = {'form': PeticionForm()}
     if request.method == 'POST':
         formulario = PeticionForm(request.POST)
@@ -62,4 +62,4 @@ def add_peticion(request):
             formulario.save()
             datos['mensaje'] = "Guardado Correctamente"
             
-    return render(request, 'core/add_peticion.html', datos)
+    return render(request, 'core/add_peticiones.html', datos)
