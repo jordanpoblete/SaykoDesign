@@ -1,3 +1,4 @@
+from core.views import descripcion
 from django.db import models
 
 # Create your models here.
@@ -12,9 +13,10 @@ class Categoria(models.Model):
         return self.nombreCategoria
 
 #Modelo para usuarios
-class Usuario(models.Model):
+class Peticion(models.Model):
     idUsuario= models.IntegerField(primary_key=True, verbose_name='Id de Usuario')
     correo= models.CharField(max_length=60,  verbose_name="correo")
+    descripcion= models.CharField(max_length=600,  verbose_name="descripcion")
     categoria= models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
     def __str__(self):

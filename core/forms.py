@@ -1,11 +1,11 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Usuario
+from .models import Peticion
 
 
 
 class UsuarioForm(ModelForm):
 
     class Meta:
-        model = Usuario
-        fields = ['idUsuario','correo','categoria']
+        model = Peticion
+        fields = ['idUsuario','correo','descripcion','categoria']

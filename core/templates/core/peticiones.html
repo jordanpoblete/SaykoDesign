@@ -51,11 +51,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'formulario'%}">Formulario</a>
               </li>
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuarios</a>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="{% url 'usuarios'%}" id="usuarios">Ver Usuarios</a>
-                  <a class="dropdown-item" href="{% url 'add_usuario'%}"id="add_usuario">Agregar Usuarios</a>
+                  <a class="dropdown-item" href="{% url 'peticiones'%}" id="peticiones">Ver Usuarios</a>
+                  <a class="dropdown-item" href="{% url 'add_peticion'%}"id="add_peticion">Agregar Usuarios</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -83,26 +84,33 @@
       <p></p>
   <div id= "titulo"><h1>Usuarios</h1></div>
 
+  
 
-
+  
   <div class="container">
-    <form method="POST" action="" id="add_usuario">
-      {% csrf_token %}
-      <div class="form-group">
-          {{ form.as_table }}
-      </div>
 
-      <input type="submit" class="btn btn-success" id="enviar" value="Agregar">
-      <input type="reset" class="btn btn-secondary" id="limpiar" value="limpiar">
-    </form>
 
-  <p>
-      <div id="respuesta" class="alert alert-success" role="alert">{{ mensaje }}</div>
-  </p>
-</div>
+    <table class ="table table-striped table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Correo</th>
+            <th>{{Descripcion}}</th>
+            <th>Categoria</th>
+        </tr>
 
-  
-  
+        {% for pet in peticiones %}
+          <tr>
+
+            <td>{{pet.idUsuario}}</td>
+            <td>{{pet.correo}}</td>
+            <td>{{pet.descripcion}}</td>
+            <td>{{pet.categoria}}</td>
+
+          </tr>
+        {% endfor %}
+    </table>
+
+  </div>
 
 
 
