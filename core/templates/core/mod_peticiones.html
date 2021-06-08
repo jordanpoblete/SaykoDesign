@@ -78,19 +78,17 @@
   <div id= "titulo"><h1>Usuarios</h1></div>
 
   <div class="container">
-    <form method="POST" action="" id="add_peticion">
+    <form method="POST" action="" id="mod_peticion">
       {% csrf_token %}
       <div class="form-group">
-          {{ form.as_table }}
+          {{ form.as_p }}
       </div>
 
-      <input type="submit" class="btn btn-success" id="enviar" value="Agregar">
-      <input type="reset" class="btn btn-secondary" id="limpiar" value="limpiar">
+      <input type="submit" class="btn btn-success" id="enviar" value="Modificar">
+      <input type="reset" class="btn btn-secondary" id="limpiar" value="Limpiar">
     </form>
 
-  <p>
-      <div id="respuesta" class="alert alert-success" role="alert">{{ mensaje }}</div>
-  </p>
+
 </div>
 
 <p></p>

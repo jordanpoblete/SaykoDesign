@@ -63,3 +63,24 @@ def add_peticiones(request):
             datos['mensaje'] = "Guardado Correctamente"
             
     return render(request, 'core/add_peticiones.html', datos)
+
+
+def edit_peticiones(request, pk):
+   peticion = Peticion.objects.get(idPeticion=pk)
+
+   if request.method == 'POST':
+      formulario_edit = PeticionForm(data=request.POST, instance=peticion)
+      if formulario_edit.is_valid:
+         formulario_edit.save()
+         return redirect(to="peticiones")
+      else:
+         datos = {
+            'form': PeticionForm(instance=peticion)
+         }
+         return render(request, 'core/add_peticiones.html', datos)
+
+
+def delete_peticiones(request, pk):
+   peticion = Peticion.objects.get(idPeticion=pk)
+   peticion.delete()
+   return redirect(to="peticiones")
