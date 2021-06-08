@@ -4,8 +4,8 @@ from .models import Peticion
 
 
 
-class UsuarioForm(ModelForm):
+class PeticionForm(ModelForm):
 
     class Meta:
         model = Peticion
-        fields = ['idUsuario','correo','descripcion','categoria']
+        fields = ['idPeticion','correo','descripcion','categoria']
