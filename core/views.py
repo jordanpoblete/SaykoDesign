@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from .models import Peticion
 from .forms import PeticionForm
 
@@ -84,3 +85,5 @@ def delete_peticiones(request, pk):
    peticion = Peticion.objects.get(idPeticion=pk)
    peticion.delete()
    return redirect(to="peticiones")
+
+
