@@ -17,5 +17,5 @@ urlpatterns = [
     path('api1/', api1, name="api1"),
     path('peticiones/', peticiones, name="peticiones"),
     path('add_peticiones/', add_peticiones, name="add_peticiones"),
-    path('mod_peticiones/', add_peticiones, name="mod_peticiones"),
+    path('mod_peticiones/', mod_peticiones, name="mod_peticiones"),
 ]
