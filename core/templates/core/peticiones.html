@@ -72,7 +72,7 @@
   </nav>
 
       <p></p>
-  <div id= "titulo"><h1>Peticiones/h1></div>
+  <div id= "titulo"><h1>Peticiones</h1></div>
   
   
 
@@ -93,13 +93,13 @@
         {% for pet in peticiones %}
           <tr>
 
-            <td>{{pet.idUsuario}}</td>
+            <td>{{pet.idPeticion}}</td>
             <td>{{pet.correo}}</td>
             <td>{{pet.descripcion}}</td>
             <td>{{pet.categoria}}</td>
             <td>
-              <a href="{% url 'mod_peticiones' pet.idUsuario %}" class="btn btn-primary" >Modificar</a>
-              <a href="{% url 'delete_peticiones' pet.idUsuario %}" class="btn btn-danger" >Eliminar</a>
+              <a href="{% url 'mod_peticiones' pet.idPeticion %}" class="btn btn-primary" >Modificar</a>
+              <a href="{% url 'delete_peticiones' pet.idPeticion %}" class="btn btn-danger" >Eliminar</a>
             </td>
 
           </tr>
