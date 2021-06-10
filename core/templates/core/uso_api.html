@@ -31,7 +31,7 @@
           <a class="nav-link" href="{% url 'ilustraciones'%}">Ilustraciones</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'diseños'%}">Diseños</a>
+            <a class="nav-link" href="{% url 'disenhos'%}">Diseños</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'graffitis'%}">Graffitis</a>
@@ -45,13 +45,8 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'formulario'%}">Formulario</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Peticiones</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="{% url 'peticiones'%}" id="peticiones">Ver Peticiones</a>
-              <a class="dropdown-item" href="{% url 'add_peticiones'%}"id="add_peticion">Agregar Peticiones</a>
-              <a class="dropdown-item" href="{% url 'mod_peticiones'%}"id="mod_peticion">Modificar Peticiones</a>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'peticiones'%}" id="peticiones">Ver Peticiones</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">API</a>

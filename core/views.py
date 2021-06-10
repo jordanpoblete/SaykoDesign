@@ -10,8 +10,8 @@ def index(request):
 def descripcion(request):
    return render(request, 'core/descripcion_ilustracion1.html')
 
-def diseños(request):
-   return render(request, 'core/diseños.html')
+def disenhos(request):
+   return render(request, 'core/disenhos.html')
 
 def formulario(request):
    return render(request, 'core/formulario.html')
@@ -66,7 +66,7 @@ def add_peticiones(request):
     return render(request, 'core/add_peticiones.html', datos)
 
 
-def edit_peticiones(request, pk):
+def mod_peticiones(request, pk):
    peticion = Peticion.objects.get(idPeticion=pk)
 
    if request.method == 'POST':
@@ -78,12 +78,14 @@ def edit_peticiones(request, pk):
          datos = {
             'form': PeticionForm(instance=peticion)
          }
-         return render(request, 'core/add_peticiones.html', datos)
+         return render(request, 'core/mod_peticiones.html', datos)
 
 
 def delete_peticiones(request, pk):
    peticion = Peticion.objects.get(idPeticion=pk)
    peticion.delete()
    return redirect(to="peticiones")
+
+
 
 
