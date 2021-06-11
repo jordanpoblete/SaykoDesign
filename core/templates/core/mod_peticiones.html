@@ -70,22 +70,24 @@
       </nav>
 
       <p></p>
-  <div id= "titulo"><h1>Peticiones</h1></div>
+      <p></p>
+  <div id= "titulo"><h1>Usuarios</h1></div>
 
   <div class="container">
-    <form method="POST" action="" id="formulario-editar">
+    <form method="POST" action="" id="mod_peticion">
       {% csrf_token %}
       <div class="form-group">
-          {{ form.as_p }}
+          {{ form.as_table }}
       </div>
 
       <input type="submit" class="btn btn-primary" id="enviar" value="Modificar">
-      <input type="reset" class="btn btn-secondary" id="limpiar" value="Limpiar">
+      <input type="reset" class="btn btn-secondary" id="limpiar" value="limpiar">
     </form>
 
-
+  <p>
+      <div id="respuesta" class="alert alert-success" role="alert">{{ mensaje }}</div>
+  </p>
 </div>
-
 <p></p>
 <footer class="abajo">
   © Wojojojo inc.   -   Sayko Design

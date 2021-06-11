@@ -68,17 +68,15 @@ def add_peticiones(request):
 
 def mod_peticiones(request, pk):
    peticion = Peticion.objects.get(idPeticion=pk)
-
+   datos = {
+      'form' : PeticionForm(instance=peticion)
+   }
    if request.method == 'POST':
-      formulario_edit = PeticionForm(data=request.POST, instance=peticion)
-      if formulario_edit.is_valid:
-         formulario_edit.save()
-         return redirect(to="peticiones")
-      else:
-         datos = {
-            'form': PeticionForm(instance=peticion)
-         }
-         return render(request, 'core/mod_peticiones.html', datos)
+      formulario_mod = PeticionForm(data= request.POST, instance = peticion)
+      if formulario_mod.is_valid:
+         formulario_mod.save()
+         datos['mensaje'] = "Modificado"
+   return render (request, 'core/mod_peticiones.html', datos)
 
 
 def delete_peticiones(request, pk):
