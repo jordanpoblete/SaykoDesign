@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-from .models import Peticion
-from .forms import PeticionForm
+from .models import Peticion, IlustracionIlu
+from .forms import PeticionForm, IlustracionIluForm
 
 # Create your views here.
 def index(request):
@@ -83,6 +83,48 @@ def delete_peticiones(request, pk):
    peticion = Peticion.objects.get(idPeticion=pk)
    peticion.delete()
    return redirect(to="peticiones")
+
+
+
+
+
+
+def ilustracionesIlu(request):
+   ilustracionesIlu = IlustracionIlu.objects.all()
+   datos = {
+      'ilustracionesIlu': ilustracionesIlu
+   }
+   return render(request, 'core/lista-Ilustraciones.html', datos)
+
+
+def add_ilustraciones(request):
+    datos = {'form': IlustracionIluForm()}
+    if request.method == 'POST':
+        formulario = IlustracionIluForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Guardado Correctamente"
+            
+    return render(request, 'core/add-ilustraciones.html', datos)
+
+
+def mod_ilustraciones(request, pk):
+   ilustracionIlu = IlustracionIlu.objects.get(idPeticion=pk)
+   datos = {
+      'form' : IlustracionIluForm(instance=ilustracionIlu)
+   }
+   if request.method == 'POST':
+      formulario_mod = IlustracionIluForm(data= request.POST, instance = ilustracionIlu)
+      if formulario_mod.is_valid:
+         formulario_mod.save()
+         datos['mensaje'] = "Modificado"
+   return render (request, 'core/mod-ilustraciones.html', datos)
+
+
+def delete_ilustraciones(request, pk):
+   ilustracionIlu = IlustracionIlu.objects.get(idPeticion=pk)
+   ilustracionIlu.delete()
+   return redirect(to="ilustracion")
 
 
 

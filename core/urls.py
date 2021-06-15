@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, descripcion, disenhos, formulario, graffitis, geolocalizacion, identidades, ilustraciones, login, portadas, recuperarcontra, register, api1, peticiones, add_peticiones, mod_peticiones, delete_peticiones
+from .views import index, descripcion, disenhos, formulario, graffitis, geolocalizacion, identidades, ilustraciones, login, portadas, recuperarcontra, register, api1, peticiones, add_peticiones, mod_peticiones, delete_peticiones, ilustracionesIlu, add_ilustraciones, mod_ilustraciones, delete_ilustraciones
 
 urlpatterns = [
     path('index/', index, name="index"),
@@ -19,5 +19,9 @@ urlpatterns = [
     path('add_peticiones/', add_peticiones, name="add_peticiones"),
     path('mod_peticiones/<pk>/', mod_peticiones, name="mod_peticiones"),
     path('delete_peticiones/<pk>/', delete_peticiones, name="delete_peticiones"),
+    path('ilustracionesIlu/', ilustracionesIlu, name="ilustracionesIlu"),
+    path('add_ilustraciones/', add_ilustraciones, name="add_ilustraciones"),
+    path('mod_ilustraciones/<pk>/', mod_ilustraciones, name="mod_ilustraciones"),
+    path('delete_ilustraciones/<pk>/', delete_ilustraciones, name="delete_ilustraciones"),
     
 ]
