@@ -58,7 +58,7 @@ def peticiones(request):
 def add_peticiones(request):
     datos = {'form': PeticionForm()}
     if request.method == 'POST':
-        formulario = PeticionForm(request.POST, request.FILES)
+        formulario = PeticionForm(request.POST)
         if formulario.is_valid:
             formulario.save()
             datos['mensaje'] = "Guardado Correctamente"
@@ -89,6 +89,10 @@ def delete_peticiones(request, pk):
 
 
 
+
+
+
+
 def ilustracionesIlu(request):
    ilustracionesIlu = IlustracionIlu.objects.all()
    datos = {
@@ -100,7 +104,7 @@ def ilustracionesIlu(request):
 def add_ilustraciones(request):
     datos = {'form': IlustracionIluForm()}
     if request.method == 'POST':
-        formulario = IlustracionIluForm(request.POST)
+        formulario = IlustracionIluForm(request.POST, request.FILES)
         if formulario.is_valid:
             formulario.save()
             datos['mensaje'] = "Guardado Correctamente"
@@ -110,15 +114,18 @@ def add_ilustraciones(request):
 
 def mod_ilustraciones(request, pk):
    ilustracionIlu = IlustracionIlu.objects.get(idIlustracion=pk)
-   datos = {
-      'form' : IlustracionIluForm(instance=ilustracionIlu)
-   }
+   
    if request.method == 'POST':
-      formulario_mod = IlustracionIluForm(data= request.POST, instance = ilustracionIlu)
+      formulario_mod = IlustracionIluForm( request.POST, request.FILES, instance = ilustracionIlu)
       if formulario_mod.is_valid:
          formulario_mod.save()
-         datos['mensaje'] = "Modificado"
-   return render (request, 'core/mod-ilustraciones.html', datos)
+      return redirect (to= "ilustracionesIlu")
+
+   else:
+         datos = {
+            'form': IlustracionIluForm(instance=ilustracionIlu)
+         }
+         return render(request, 'core/mod-ilustraciones.html',datos)
 
 
 def delete_ilustraciones(request, pk):

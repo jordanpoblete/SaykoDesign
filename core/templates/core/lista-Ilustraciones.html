@@ -77,16 +77,16 @@
   
 
   
-  <div class="container">
+  <div class="container-fluid">
     <a href="{% url 'add_ilustraciones' %}" class="btn btn-success">Agregar Ilustraciones</a>
     
     <p></p>
     
     <table class ="table table-striped table-dark">
         <tr>
+            <th></th>
             <th>Id</th>
             <th>Nombre</th>
-            <th></th>
             <th>Descripcion</th>
             <th>Fecha</th>
             <th>Categoria</th>
@@ -95,16 +95,13 @@
         {% for ilu in ilustracionesIlu %}
           <tr>
 
-            <td>{{ilu.idIlustracion}}</td>
-            <td>{{ilu.nombre}}</td>
-
             {% if ilu.imagen %}
 
-              <img src = "{{ilu.imagen.url}}" width="150" height = "150">
+            <td><img src = "{{ilu.imagen.url}}" width="150" height = "150"></td>
 
             {% endif %}
-
-
+            <td>{{ilu.idIlustracion}}</td>
+            <td>{{ilu.nombre}}</td>     
             <td>{{ilu.descripcionIlu}}</td>
             <td>{{ilu.fecha}}</td>
             <td>{{ilu.categoria}}</td>

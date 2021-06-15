@@ -27,10 +27,10 @@ class Peticion(models.Model):
 class IlustracionIlu(models.Model):
     idIlustracion= models.IntegerField(primary_key=True, verbose_name='Id de Ilustracion')
     nombre= models.CharField(max_length=100,  verbose_name="nombre")
-    imagen= models.ImageField(upload_to = "ilustraciones", null=True, verbose_name="imagen uwu")
     descripcionIlu= models.CharField(max_length=600,  verbose_name="descripcion")
     fecha= models.DateField(verbose_name="fecha")
     categoria= models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    imagen= models.ImageField(upload_to = "media", null=True, verbose_name="imagen")
 
     def __str__(self):
         return self.nombre

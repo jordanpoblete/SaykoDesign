@@ -16,4 +16,4 @@ class IlustracionIluForm(ModelForm):
 
     class Meta:
         model = IlustracionIlu
-        fields = ['idIlustracion','nombre','descripcionIlu','fecha','categoria']
+        fields = ['idIlustracion','nombre','descripcionIlu','fecha','categoria','imagen']
