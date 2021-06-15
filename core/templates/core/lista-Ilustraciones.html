@@ -52,7 +52,7 @@
             <a class="nav-link" href="{% url 'formulario'%}">Formulario</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'peticiones'%}" id="peticiones">Ver Peticiones</a>
+            <a class="nav-link" href="{% url 'lista-Ilustraciones'%}" id="peticiones">Ver lista lustraciones</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">API</a>
@@ -100,8 +100,8 @@
             <td>{{ilu.fecha}}</td>
             <td>{{ilu.categoria}}</td>
             <td>
-              <a href="{% url 'mod_peticiones' pet.idPeticion %}" class="btn btn-primary" >Modificar</a>
-              <a href="{% url 'delete_peticiones' pet.idPeticion %}" class="btn btn-danger" >Eliminar</a>
+              <a href="{% url 'mod-Ilustraciones' pet.idPeticion %}" class="btn btn-primary" >Modificar</a>
+              <a href="{% url 'delete-Ilustracionesciones' pet.idPeticion %}" class="btn btn-danger" >Eliminar</a>
             </td>
 
           </tr>
