@@ -52,7 +52,7 @@
             <a class="nav-link" href="{% url 'formulario'%}">Formulario</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'lista-Ilustraciones'%}" id="peticiones">Ver lista lustraciones</a>
+            <a class="nav-link" href="{% url 'ilustracionesIlu'%}" id="ilustraciones">Ver lista Ilustraciones</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">API</a>
@@ -78,7 +78,7 @@
 
   
   <div class="container">
-    <a href="{% url 'add-ilustraciones' %}" class="btn btn-success">Agregar Ilustraciones</a>
+    <a href="{% url 'add_ilustraciones' %}" class="btn btn-success">Agregar Ilustraciones</a>
     
     <p></p>
     
@@ -91,7 +91,7 @@
             <th>Categoria</th>
         </tr>
 
-        {% for ilu in ilustraciones %}
+        {% for ilu in ilustracionesIlu %}
           <tr>
 
             <td>{{ilu.idIlustracion}}</td>
@@ -100,8 +100,8 @@
             <td>{{ilu.fecha}}</td>
             <td>{{ilu.categoria}}</td>
             <td>
-              <a href="{% url 'mod-Ilustraciones' pet.idPeticion %}" class="btn btn-primary" >Modificar</a>
-              <a href="{% url 'delete-Ilustracionesciones' pet.idPeticion %}" class="btn btn-danger" >Eliminar</a>
+              <a href="{% url 'mod_ilustraciones' ilu.idIlustracion %}" class="btn btn-primary" >Modificar</a>
+              <a href="{% url 'delete_ilustraciones' ilu.idIlustracion %}" class="btn btn-danger" >Eliminar</a>
             </td>
 
           </tr>

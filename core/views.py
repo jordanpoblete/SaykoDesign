@@ -109,7 +109,7 @@ def add_ilustraciones(request):
 
 
 def mod_ilustraciones(request, pk):
-   ilustracionIlu = IlustracionIlu.objects.get(idPeticion=pk)
+   ilustracionIlu = IlustracionIlu.objects.get(idIlustracion=pk)
    datos = {
       'form' : IlustracionIluForm(instance=ilustracionIlu)
    }
@@ -122,9 +122,9 @@ def mod_ilustraciones(request, pk):
 
 
 def delete_ilustraciones(request, pk):
-   ilustracionIlu = IlustracionIlu.objects.get(idPeticion=pk)
+   ilustracionIlu = IlustracionIlu.objects.get(idIlustracion=pk)
    ilustracionIlu.delete()
-   return redirect(to="ilustracion")
+   return redirect(to="ilustracionesIlu")
 
 
 
