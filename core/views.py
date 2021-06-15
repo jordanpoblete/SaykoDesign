@@ -58,7 +58,7 @@ def peticiones(request):
 def add_peticiones(request):
     datos = {'form': PeticionForm()}
     if request.method == 'POST':
-        formulario = PeticionForm(request.POST)
+        formulario = PeticionForm(request.POST, request.FILES)
         if formulario.is_valid:
             formulario.save()
             datos['mensaje'] = "Guardado Correctamente"

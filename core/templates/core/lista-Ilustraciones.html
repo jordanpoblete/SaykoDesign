@@ -86,6 +86,7 @@
         <tr>
             <th>Id</th>
             <th>Nombre</th>
+            <th></th>
             <th>Descripcion</th>
             <th>Fecha</th>
             <th>Categoria</th>
@@ -96,6 +97,14 @@
 
             <td>{{ilu.idIlustracion}}</td>
             <td>{{ilu.nombre}}</td>
+
+            {% if ilu.imagen %}
+
+              <img src = "{{ilu.imagen.url}}" width="150" height = "150">
+
+            {% endif %}
+
+
             <td>{{ilu.descripcionIlu}}</td>
             <td>{{ilu.fecha}}</td>
             <td>{{ilu.categoria}}</td>
