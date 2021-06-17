@@ -7,7 +7,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 
 @api_view(['GET', 'POST'])
-def ilustracionIlu(request):
+def ilustracionApi(request):
     """
     Lista todos las Ilustraciones
     """

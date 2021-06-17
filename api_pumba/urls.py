@@ -1,6 +1,6 @@
 from django.urls import path
-from api_pumba.views import ilustracionIlu
+from api_pumba.views import ilustracionApi
 
 urlpatterns = [
-    path('ilustracion-api/', ilustracionIlu, name='ilustracionesIlu'),
+    path('ilustracion-api/', ilustracionApi, name='ilustracionApi'),
 ]
