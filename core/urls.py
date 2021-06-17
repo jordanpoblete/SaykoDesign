@@ -24,4 +24,5 @@ urlpatterns = [
     path('mod_ilustraciones/<pk>/', mod_ilustraciones, name="mod_ilustraciones"),
     path('delete_ilustraciones/<pk>/', delete_ilustraciones, name="delete_ilustraciones"),
     
+    
 ]
