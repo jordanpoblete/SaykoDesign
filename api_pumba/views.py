@@ -14,7 +14,7 @@ def ilustracionpost(request):
         if request.method == 'GET':
             ilustraciones_lista = IlustracionIlu.objects.all()
             serializer = IlustracionIluSerializer(ilustraciones_lista, many=True)
-        return Response(serializer.data)
+            return Response(serializer.data)
 
         if request.method == 'POST':
             """
@@ -29,7 +29,7 @@ def ilustracionpost(request):
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def ilustracionApi(request):
+def ilustracionApi(request, pk):
     try:
         ilustracionesIlu = IlustracionIlu.objects.get(idIlustracion = pk)
     except IlustracionIlu.DoesNotExist:
