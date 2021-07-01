@@ -48,7 +48,7 @@ def ilustracionApi(request, pk):
     """
     GET: Mostrar ilustracion singular singular singular singular segun primary key
     """
-    if requestg.method == 'GET':
+    if request.method == 'GET':
         serializer = IlustracionIluSerializer(ilustracionesIlu)
         return Response(serializer.data)
 
