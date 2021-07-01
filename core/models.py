@@ -30,7 +30,7 @@ class IlustracionIlu(models.Model):
     descripcionIlu= models.CharField(max_length=600,  verbose_name="descripcion")
     fecha= models.DateField(verbose_name="fecha")
     categoria= models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    imagen= models.ImageField(upload_to = "media", null=True, verbose_name="imagen")
+    imagen= models.ImageField(upload_to = "core", default="core/no-hay-imagen.jpg", verbose_name="imagen")
 
     def __str__(self):
         return self.nombre
