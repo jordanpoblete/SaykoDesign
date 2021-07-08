@@ -39,6 +39,7 @@ def ilustracionpost(request):
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes((IsAuthenticated,))
 def ilustracionApi(request, pk):
     try:
         ilustracionesIlu = IlustracionIlu.objects.get(idIlustracion = pk)
@@ -74,25 +75,3 @@ def ilustracionApi(request, pk):
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
 
-
-@api_view(['POST'])
-def login(request):
-    data = JSONParser().parse(request)
-
-    username = data['username']
-    password = data['password']
-
-    try:
-        user = User.objects.get(username=username)
-    except User.DoesNotExist:
-        return Response("Usuario Inválido")
-    
-    #Validamos el password
-    pass_valido = check_password(password, user.password)
-    if not pass_valido:
-        return Response("Contraseña incorrecta")
-
-    #permite crear o recuperar el token
-    token, created = Token.objects.get_or_create(user=user)
-    # devolvemos el token
-    return Response(token.key)
